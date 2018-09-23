@@ -1,6 +1,7 @@
 package moviesite.demo;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.logging.Logger;
@@ -8,6 +9,7 @@ import java.util.logging.Logger;
 @Controller
 public class MovieController {
     Logger log = Logger.getLogger(MovieController.class.getName());
+    MovieCreator mc = new MovieCreator();
 
     private String HOME = "home";
     private String MOVIE = "movie";
@@ -22,6 +24,22 @@ public class MovieController {
         return HOME;
     }
 
+    @GetMapping("create")
+    public String create (){
+
+        log.info("someone tried to create something");
+
+        return "create";
+    }
+
+    @GetMapping ("edit")
+    public String edit (){
+
+        log.info("now someone is trying to edit your stuff");
+
+        return "edit";
+    }
+
     @GetMapping("/no")
     public String no(){
 
@@ -31,7 +49,9 @@ public class MovieController {
     }
 
     @GetMapping("/Movie")
-    public String Movie(){
+    public String Movie(Model model){
+
+        //model.addAttribute("movies", MovieCreator.getMovies());
 
         log.info("Movie called");
 
