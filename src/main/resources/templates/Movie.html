@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie5000</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #af4d02;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #af4d02;
+            color: white;
+        }
+
+
+        .button {
+            border-radius: 4px;
+            background-color: #1cf400;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 17px;
+            padding: 13px;
+            width: 125px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .button:hover span {
+            padding-right: 25px;
+        }
+
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+<div class="topnav">
+    <a href="/">IMDB</a>
+    <a class="active" href="Movie">Movie</a>
+    <a >Contact</a>
+    <a href="About_us">About us</a>
+</div>
+
+<div style="padding-left:16px">
+    <h2>Movie</h2>
+    <a href="/Create"><button  class="button"><span>Create </span></button></a>
+</div>
+
+</body>
+</html>
