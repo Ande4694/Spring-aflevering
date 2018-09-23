@@ -1,24 +1,52 @@
 package moviesite.demo;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import java.util.Date;
+
+import static com.sun.javafx.print.Units.MM;
+
+@Entity
 public class Movies {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String title;
-    private int year;
     private int duration;
     private String genre;
-
-    // kan måske bruges
     private String youtubeLink;
+    private Date year;
+    private int movieId;
 
-    public Movies(String title, int year, int duration, String genre, String youtubeLink) {
-        this.title = title;
-        this.year = year;
+    public Movies(int duration, String genre, String youtubeLink, Date year, int movieId) {
         this.duration = duration;
         this.genre = genre;
         this.youtubeLink = youtubeLink;
+        this.year = year;
+        this.movieId = movieId;
     }
 
     public Movies() {
+    }
+
+    public Movies(int movieId) {
+        this.movieId = movieId;
+    }
+
+    @Override
+    public String toString() {
+        return "Movies{" +
+                "title='" + title + '\'' +
+                ", duration=" + duration +
+                ", genre='" + genre + '\'' +
+                ", youtubeLink='" + youtubeLink + '\'' +
+                ", year=" + year +
+                ", movieId=" + movieId +
+                '}';
     }
 
     public String getTitle() {
@@ -27,14 +55,6 @@ public class Movies {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
     }
 
     public int getDuration() {
@@ -60,4 +80,22 @@ public class Movies {
     public void setYoutubeLink(String youtubeLink) {
         this.youtubeLink = youtubeLink;
     }
+
+    public Date getYear() {
+        return year;
+    }
+
+    public void setYear(Date year) {
+        this.year = year;
+    }
+
+    public int getMovieId() {
+        return movieId;
+    }
+
+    public void setMovieId(int movieId) {
+        this.movieId = movieId;
+    }
 }
+
+
