@@ -1,51 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Movie5000</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        body {
+        body, html {
+            height: 100%;
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
         }
 
-        .topnav {
-            overflow: hidden;
-            background-color: #333;
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://www.wallmesh.com/wp-content/uploads/2017/11/rampage-2018-movie-hd-wallpaper-1920x1080.jpg");
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
         }
 
-        .topnav a {
-            float: left;
-            color: #f2f2f2;
+        .hero-text {
             text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fffbff;
         }
 
-        .topnav a:hover {
-            background-color: #af4d02;
-            color: black;
+        .hero-text button {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 10px 25px;
+            color: #fffbff;
+            background-color: #000000;
+            text-align: center;
+            cursor: pointer;
+            href="Movie"
         }
 
-        .topnav a.active {
-            background-color: #af4d02;
-            color: white;
+        .hero-text button:hover {
+            color: #fffbff;
         }
     </style>
 </head>
-
 <body>
-<div class="topnav">
-    <a class="active" href="/">IMDB</a>
-    <a href="Movie">Movie</a>
-    <a href="no">Contact</a>
-    <a href="About_us">About us</a>
-</div>
 
-<div style="padding-left:16px">
-    <h2>Home</h2>
-    <p>Some content..</p>
+<div class="hero-image">
+    <div class="hero-text">
+        <h1 style="font-size:50px">5000 Movies</h1>
+        <p>For everyone who loves movies</p>
+        <button> <a href="Movie">Let's go!</a></button>
+    </div>
 </div>
 
 </body>
