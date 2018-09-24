@@ -3,8 +3,8 @@ package moviesite.demo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.logging.Logger;
 
@@ -19,8 +19,9 @@ public class MovieController {
     private String CREATE = "Create";
     UserRepo listOfMovies = new UserRepo();
 
+
     @GetMapping("")
-    public String home(){
+    public String home() {
 
         log.info("index called");
 
@@ -28,7 +29,7 @@ public class MovieController {
     }
 
     @GetMapping("/no")
-    public String no(){
+    public String no() {
 
         log.info("no called");
 
@@ -36,10 +37,9 @@ public class MovieController {
     }
 
     @GetMapping("/Movie")
-    public String Movie(Model model){
+    public String Movie(Model model) {
 
         log.info("Movie called");
-
 
 
         model.addAttribute("Movies", listOfMovies.getAll());
@@ -50,7 +50,7 @@ public class MovieController {
     }
 
     @GetMapping("/About_us")
-    public String About_us(){
+    public String About_us() {
 
         log.info("About_us called");
 
@@ -58,7 +58,7 @@ public class MovieController {
     }
 
     @GetMapping("/Create")
-    public String Create(Model model){
+    public String Create(Model model) {
 
         log.info("Create called");
         model.addAttribute("movie", new Movie());
@@ -67,18 +67,22 @@ public class MovieController {
         return CREATE;
     }
 
-   /* @PostMapping("/Create")
-    public String Create(@ModelAttribute Movie movie, Model model){
+    @RequestMapping(value = "/Create")
+    public String movieToArray(
+            @RequestParam("title") String title,
+            @RequestParam("genre") String genre,
+            @RequestParam("duration") int duration,
+            @RequestParam("movieId") int movieId) throws Exception {
 
-        log.info("some monkey created something");
-        listOfMovies.save(movie);
-        model.addAttribute("Movies", listOfMovies.getAll());
+        listOfMovies.movies.add(new Movie(title, duration, genre, movieId));
 
         return "redirect:/Movie";
 
     }
-*/
-
-
-
 }
+
+
+
+
+
+
