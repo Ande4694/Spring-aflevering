@@ -20,9 +20,14 @@ public void addmovies(){
     movies.add(movie4);
 }
 
-public ArrayList<Movie> Getall(){
+public ArrayList<Movie> getall(){
 
     return movies;
+
+}
+
+public UserRepo(){
+
 
 }
 }

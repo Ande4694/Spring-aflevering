@@ -1,8 +1,11 @@
 package moviesite.demo;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.*;
+import java.util.List;
 import java.util.logging.Logger;
 
 @Controller
@@ -32,9 +35,14 @@ public class MovieController {
     }
 
     @GetMapping("/Movie")
-    public String Movie(){
+    public String Movie(Model model){
 
         log.info("Movie called");
+
+        UserRepo listofmovies = new UserRepo();
+        List<Movie> movies = UserRepo.getall();
+        listofmovies.addmovies();
+        model.addAllAttributes(listofmovies.getall());
 
         return MOVIE;
     }
