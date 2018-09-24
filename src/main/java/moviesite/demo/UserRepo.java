@@ -11,6 +11,24 @@ public class UserRepo {
     Movie movie3 = new Movie ("hokus", 79, "Horror", 24091991);
     Movie movie4 = new Movie ("hokus", 79, "Horror", 24091991);
 
+public Movie searchByTitle(String name){
+    for (int i = 0; i<movies.size();i++){
+
+        if(movies.get(i).getTitle().contains(name)){
+            return movies.get(i);
+        }
+        // evt kald create funk
+    }
+
+    return null;
+}
+
+public ArrayList<Movie> create (){
+    movies.add(new Movie());
+    return movies;
+}
+
+
 
 public void addMovies(){
     //  constructor default
