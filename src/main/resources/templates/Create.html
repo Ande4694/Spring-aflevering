@@ -72,9 +72,15 @@
         .registerbtn:hover {
             opacity: 1;
         }
+        h3 {
+            position: absolute;
+            left: 1725px;
+            top: -21px;
+        }
     </style>
 </head>
 <body>
+<h3> <img src="https://i.imgur.com/VKkRjuB.png"  width="150" height="50"></h3>
 <div class="topnav">
     <a href="/">IMDB</a>
     <a class="active" href="Movie">Movie</a>
@@ -82,30 +88,28 @@
     <a href="About_us">About us</a>
 </div>
 
-    <div class="container">
-        <h1>Create Movie</h1>
-        <form method="Post" th:action="@{/Create}">
+<div class="container">
+    <h1>Create Movie</h1>
+    <form method="Post" th:action="@{/Create}">
         <hr>
 
         <label for="title"><b>Title</b></label>
-        <input type="text" th:field="${movie.title}" placeholder="Enter Title" required>
+        <input type="text" th:name="title" placeholder="Enter Title" required>
 
         <label for="genre"><b>Genre</b></label>
-        <input type="text" th:field="${movie.genre}" placeholder="Enter Genre"  required>
+        <input type="text" th:name="genre" placeholder="Enter Genre"  required>
 
         <label for="duration"><b>Duration (min)</b></label>
-        <input type="text" th:field="${movie.duration}" placeholder="Enter Duration" required>
+        <input type="text" th:name="duration" placeholder="Enter Duration" required>
 
         <label for="id"><b>ID</b></label>
-        <input type="text" th:field="${movie.movieId}" placeholder="Enter ID" required>
+        <input type="text" th:name="movieId" placeholder="Enter ID" required>
 
-            <input class="registerbtn" type="submit" value="Create"/>
+        <input class="registerbtn" type="submit" value="Create"/>
 
         <hr>
-
-
-
-
-
+    </form>
+</div>
+<div class="logo"> <img src="https://i.imgur.com/VKkRjuB.png" alt="Trulli" width="150" height="50"> </div>
 </body>
 </html>

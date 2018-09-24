@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:padding-Right="http://www.w3.org/1999/xhtml">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
@@ -8,9 +8,8 @@
         * {
             box-sizing: border-box;
         }
-
         #myInput {
-            background-image: url('/css/searchicon.png');
+            background-image: url('http://www.paulund.co.uk/playground/demo/pretty_search_forms/images/search.png');
             background-position: 10px 10px;
             background-repeat: no-repeat;
             width: 100%;
@@ -19,23 +18,19 @@
             border: 1px solid #ddd;
             margin-bottom: 12px;
         }
-
         #myTable {
             border-collapse: collapse;
             width: 100%;
             border: 1px solid #ddd;
             font-size: 18px;
         }
-
         #myTable th, #myTable td {
             text-align: left;
             padding: 12px;
         }
-
         #myTable tr {
             border-bottom: 1px solid #ddd;
         }
-
         #myTable tr.header, #myTable tr:hover {
             background-color: #f1f1f1;
         }
@@ -97,6 +92,11 @@
             opacity: 1;
             right: 0;
         }
+        .logo {
+            position: absolute;
+            right: 14px;
+            top: -2PX;
+        }
     </style>
 </head>
 
@@ -108,8 +108,8 @@
     <a href="About_us">About us</a>
 </div>
 
-<div style="padding-left:16px">
-    <h2>Movie</h2>
+<div style="padding-left: 38px;padding-right: 4px;";>
+    <h2>Movie List</h2>
     <a href="/Create"><button  class="button"><span>Create </span></button></a>
     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Title.." title="Type in a name">
 
@@ -140,7 +140,7 @@
     </div>
 </div>
 
-        </div>
+</div>
 </table>
 <script>
     function myFunction() {
@@ -161,5 +161,6 @@
         }
     }
 </script>
+<div class="logo"> <img src="https://i.imgur.com/VKkRjuB.png" alt="Trulli" width="150" height="50"> </div>
 </body>
 </html>
