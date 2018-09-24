@@ -3,8 +3,8 @@ package moviesite.demo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.logging.Logger;
 
@@ -18,6 +18,7 @@ public class MovieController {
     private String ABOUT_US = "About_us";
     private String CREATE = "Create";
     UserRepo listOfMovies = new UserRepo();
+
 
     @GetMapping("")
     public String home(){
@@ -67,18 +68,32 @@ public class MovieController {
         return CREATE;
     }
 
-    @PostMapping("/Create")
-    public String Create(@ModelAttribute Movie movie, Model model){
+//    @PostMapping("/Create")
+//    public String Create(@ModelAttribute Movie movie, Model model){
+//
+//        log.info("some monkey created something");
+//        listOfMovies.save(movie);
+//        model.addAttribute("Movies", listOfMovies.getAll());
+//
+//        return "redirect:/Movie";
+//
+//    }
 
-        log.info("some monkey created something");
-        listOfMovies.save(movie);
-        model.addAttribute("Movies", listOfMovies.getAll());
+    @RequestMapping(value ="/Create")
+    public String movieToArray(
+        @RequestParam("title") String title,
+        @RequestParam("genre") String genre,
+        @RequestParam("duration") int duration,
+        @RequestParam("movieId")  int movieId) throws Exception{
+
+        listOfMovies.movies.add(new Movie(title, duration, genre, movieId));
 
         return "redirect:/Movie";
+    }
 
     }
 
 
 
 
-}
+

@@ -88,16 +88,16 @@
         <hr>
 
         <label for="title"><b>Title</b></label>
-        <input type="text" th:field="${movie.title}" placeholder="Enter Title" required>
+        <input type="text" th:name="title" placeholder="Enter Title" required>
 
         <label for="genre"><b>Genre</b></label>
-        <input type="text" th:field="${movie.genre}" placeholder="Enter Genre"  required>
+        <input type="text" th:name="genre" placeholder="Enter Genre"  required>
 
         <label for="duration"><b>Duration</b></label>
-        <input type="text" th:field="${movie.duration}" placeholder="Enter Duration" required>
+        <input type="text" th:name="duration" placeholder="Enter Duration" required>
 
         <label for="id"><b>ID</b></label>
-        <input type="text" th:field="${movie.movieId}" placeholder="Enter ID" required>
+        <input type="text" th:name="movieId" placeholder="Enter ID" required>
 
             <input class="registerbtn" type="submit" value="Create"/>
 
