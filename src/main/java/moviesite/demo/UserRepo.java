@@ -1,5 +1,7 @@
 package moviesite.demo;
 
+import org.springframework.ui.Model;
+
 import java.util.ArrayList;
 
 
@@ -26,8 +28,19 @@ public Movie searchByTitle(String name){
     return null;
 }
 
-public ArrayList<Movie> create (){
-    movies.add(new Movie());
+
+
+public void addMovie(Movie movie){
+    this.movies.add(movie);
+}
+
+public ArrayList<Movie> save (Movie movie){
+    movie.setDuration();
+    movie.setTitle();
+    movie.setMovieId();
+    movie.setGenre();
+
+
     return movies;
 }
 

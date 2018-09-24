@@ -1,17 +1,12 @@
 package moviesite.demo;
 
 
-import java.util.Date;
-
-
-
 public class Movie {
 
 
     private String title;
     private int duration;
     private String genre;
-    private String youtubeLink;
     private int movieId;
 
     public Movie(String title, int duration, String genre, int movieId) {
@@ -24,17 +19,12 @@ public class Movie {
     public Movie() {
     }
 
-    public Movie(int movieId) {
-        this.movieId = movieId;
-    }
-
     @Override
     public String toString() {
         return "Movies{" +
                 "title='" + title + '\'' +
                 ", duration=" + duration +
                 ", genre='" + genre + '\'' +
-                ", youtubeLink='" + youtubeLink + '\'' +
                 ", movieId=" + movieId +
                 '}';
     }
@@ -61,14 +51,6 @@ public class Movie {
 
     public void setGenre(String genre) {
         this.genre = genre;
-    }
-
-    public String getYoutubeLink() {
-        return youtubeLink;
-    }
-
-    public void setYoutubeLink(String youtubeLink) {
-        this.youtubeLink = youtubeLink;
     }
 
     public int getMovieId() {

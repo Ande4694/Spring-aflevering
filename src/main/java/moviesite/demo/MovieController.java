@@ -61,7 +61,7 @@ public class MovieController {
     public String Create(Model model){
 
         log.info("Create called");
-        model.addAttribute("Movies", new Movie());
+        model.addAttribute("movie", new Movie());
 
 
         return CREATE;
@@ -71,10 +71,10 @@ public class MovieController {
     public String Create(@ModelAttribute Movie movie, Model model){
 
         log.info("some monkey created something");
-        listOfMovies.create();
-        model.addAttribute("Moives", listOfMovies.getAll());
+        listOfMovies.save(movie);
+        model.addAttribute("Movies", listOfMovies.getAll());
 
-        return "redirect:/";
+        return "redirect:/Movie";
 
     }
 
