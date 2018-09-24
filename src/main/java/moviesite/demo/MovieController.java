@@ -3,10 +3,9 @@ package moviesite.demo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
-import java.util.*;
-import java.util.List;
-import java.util.ArrayList;
 import java.util.logging.Logger;
 
 @Controller
@@ -18,6 +17,7 @@ public class MovieController {
     private String NO = "no";
     private String ABOUT_US = "About_us";
     private String CREATE = "Create";
+    UserRepo listOfMovies = new UserRepo();
 
     @GetMapping("")
     public String home(){
@@ -40,8 +40,8 @@ public class MovieController {
 
         log.info("Movie called");
 
-        UserRepo listOfMovies = new UserRepo();
-        listOfMovies.addMovies();
+
+
         model.addAttribute("Movies", listOfMovies.getAll());
         /// "Movies" er NØGLEN SOM VI KALDER!!!!!!!"!!!!!!"! i Movie html 93
 
@@ -58,11 +58,24 @@ public class MovieController {
     }
 
     @GetMapping("/Create")
-    public String Create(){
+    public String Create(Model model){
 
         log.info("Create called");
+        model.addAttribute("movie", new Movie());
+
 
         return CREATE;
+    }
+
+    @PostMapping("/Create")
+    public String Create(@ModelAttribute Movie movie, Model model){
+
+        log.info("some monkey created something");
+        listOfMovies.save(movie);
+        model.addAttribute("Movies", listOfMovies.getAll());
+
+        return "redirect:/Movie";
+
     }
 
 

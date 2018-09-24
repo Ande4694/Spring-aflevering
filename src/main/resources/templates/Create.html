@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Create</title>
@@ -81,29 +81,31 @@
     <a >Contact</a>
     <a href="About_us">About us</a>
 </div>
-<form action= Movie movie5 = new Movie ("title", "Genre", "Duration", "id");
 
-"/">
     <div class="container">
         <h1>Create Movie</h1>
+        <form method="Post" th:action="@{/Create}">
         <hr>
 
         <label for="title"><b>Title</b></label>
-        <input type="text" placeholder="Enter Title" required>
+        <input type="text" th:field="${movie.title}" placeholder="Enter Title" required>
 
         <label for="genre"><b>Genre</b></label>
-        <input type="text" placeholder="Enter Genre"  required>
+        <input type="text" th:field="${movie.genre}" placeholder="Enter Genre"  required>
 
         <label for="duration"><b>Duration</b></label>
-        <input type="text" placeholder="Enter Duration" required>
+        <input type="text" th:field="${movie.duration}" placeholder="Enter Duration" required>
 
         <label for="id"><b>ID</b></label>
-        <input type="text" placeholder="Enter ID" numberObject.required>
+        <input type="text" th:field="${movie.movieId}" placeholder="Enter ID" required>
+
+            <input class="registerbtn" type="submit" value="Create"/>
+
         <hr>
 
-        <button class="registerbtn">Create</button>
 
-</form>
+
+
 
 </body>
 </html>

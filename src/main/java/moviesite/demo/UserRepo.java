@@ -1,8 +1,13 @@
 package moviesite.demo;
 
-import java.util.*;
+import org.springframework.ui.Model;
+
+import java.util.ArrayList;
+
+
 
 public class UserRepo {
+
 
     ArrayList<Movie> movies = new ArrayList<Movie>();
 
@@ -23,8 +28,19 @@ public Movie searchByTitle(String name){
     return null;
 }
 
-public ArrayList<Movie> create (){
-    movies.add(new Movie());
+
+
+public void addMovie(Movie movie){
+    this.movies.add(movie);
+}
+
+public ArrayList<Movie> save (Movie movie){
+    movie.setDuration();
+    movie.setTitle();
+    movie.setMovieId();
+    movie.setGenre();
+
+
     return movies;
 }
 
@@ -33,10 +49,7 @@ public ArrayList<Movie> create (){
 public void addMovies(){
     //  constructor default
 
-    movies.add(movie1);
-    movies.add(movie2);
-    movies.add(movie3);
-    movies.add(movie4);
+
 }
 
 public ArrayList<Movie> getAll(){
@@ -46,7 +59,10 @@ public ArrayList<Movie> getAll(){
 }
 
 public UserRepo(){
-
+    movies.add(movie1);
+    movies.add(movie2);
+    movies.add(movie3);
+    movies.add(movie4);
 
 }
 }
