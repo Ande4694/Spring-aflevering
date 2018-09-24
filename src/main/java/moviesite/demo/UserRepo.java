@@ -1,8 +1,11 @@
 package moviesite.demo;
 
-import java.util.*;
+import java.util.ArrayList;
+
+
 
 public class UserRepo {
+
 
     ArrayList<Movie> movies = new ArrayList<Movie>();
 
@@ -33,10 +36,7 @@ public ArrayList<Movie> create (){
 public void addMovies(){
     //  constructor default
 
-    movies.add(movie1);
-    movies.add(movie2);
-    movies.add(movie3);
-    movies.add(movie4);
+
 }
 
 public ArrayList<Movie> getAll(){
@@ -46,7 +46,10 @@ public ArrayList<Movie> getAll(){
 }
 
 public UserRepo(){
-
+    movies.add(movie1);
+    movies.add(movie2);
+    movies.add(movie3);
+    movies.add(movie4);
 
 }
 }
