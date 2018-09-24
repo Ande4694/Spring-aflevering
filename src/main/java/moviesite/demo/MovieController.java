@@ -40,7 +40,7 @@ public class MovieController {
         log.info("Movie called");
 
         UserRepo listofmovies = new UserRepo();
-        List<Movie> movies = UserRepo.getall();
+        List<Movie> movies = listofmovies.getall();
         listofmovies.addmovies();
         model.addAllAttributes(listofmovies.getall());
 
