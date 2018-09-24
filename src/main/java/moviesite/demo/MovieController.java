@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.*;
 import java.util.List;
+import java.util.ArrayList;
 import java.util.logging.Logger;
 
 @Controller
@@ -39,10 +40,11 @@ public class MovieController {
 
         log.info("Movie called");
 
-        UserRepo listofmovies = new UserRepo();
-        List<Movie> movies = listofmovies.getall();
-        listofmovies.addmovies();
-        model.addAllAttributes(listofmovies.getall());
+        UserRepo listOfMovies = new UserRepo();
+        listOfMovies.addMovies();
+        model.addAttribute("Movies", listOfMovies.getAll());
+        /// "Movies" er NØGLEN SOM VI KALDER!!!!!!!"!!!!!!"! i Movie html 93
+
 
         return MOVIE;
     }
