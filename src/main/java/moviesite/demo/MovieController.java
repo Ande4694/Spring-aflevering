@@ -45,6 +45,7 @@ public class MovieController {
         model.addAttribute("Movies", listOfMovies.getAll());
         /// "Movies" er NØGLEN SOM VI KALDER!!!!!!!"!!!!!!"! i Movie html 93
 
+
         return MOVIE;
     }
 

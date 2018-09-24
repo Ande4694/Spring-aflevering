@@ -41,7 +41,7 @@
             background-color: white;
         }
         /* Full-width input fields */
-        input[type=text], input[type=password] {
+        input[type=text] {
             width: 100%;
             padding: 15px;
             margin: 5px 0 22px 0;
@@ -81,25 +81,28 @@
     <a >Contact</a>
     <a href="About_us">About us</a>
 </div>
-<form action="/action_page.php">
+<form action=
+              Movie movie5 = new Movie ("title", "Genre", "Duration", "id");
+
+"/">
     <div class="container">
         <h1>Create Movie</h1>
         <hr>
 
-        <label for="email"><b>Title</b></label>
-        <input type="text" placeholder="Enter Title" name="email" required>
+        <label for="title"><b>Title</b></label>
+        <input type="text" placeholder="Enter Title" required>
 
-        <label for="psw"><b>Year</b></label>
-        <input type="text" placeholder="dd/mm/yyyy" name="psw" required>
+        <label for="genre"><b>Genre</b></label>
+        <input type="text" placeholder="Enter Genre"  required>
 
-        <label for="psw-repeat"><b>Duration</b></label>
-        <input type="text" placeholder="Enter Duration" name="psw-repeat" required>
+        <label for="duration"><b>Duration</b></label>
+        <input type="text" placeholder="Enter Duration" required>
 
-        <label for="psw-repeat"><b>Genre</b></label>
-        <input type="text" placeholder="Enter Genre" name="psw-repeat" required>
+        <label for="id"><b>ID</b></label>
+        <input type="text" placeholder="Enter ID" required>
         <hr>
 
-        <button type="submit" class="registerbtn">Create</button>
+        <button class="registerbtn">Create</button>
 
 </form>
 
