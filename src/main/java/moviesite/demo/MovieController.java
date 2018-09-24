@@ -67,7 +67,7 @@ public class MovieController {
         return CREATE;
     }
 
-    @PostMapping("/Create")
+   /* @PostMapping("/Create")
     public String Create(@ModelAttribute Movie movie, Model model){
 
         log.info("some monkey created something");
@@ -77,7 +77,7 @@ public class MovieController {
         return "redirect:/Movie";
 
     }
-
+*/
 
 
 
