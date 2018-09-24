@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Movie5000</title>
@@ -76,7 +76,32 @@
 <div style="padding-left:16px">
     <h2>Movie</h2>
     <a href="/Create"><button  class="button"><span>Create </span></button></a>
-</div>
 
+
+    <div class="container">
+
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Genre</th>
+                <th>Duration</th>
+                <th>ID</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="movie: ${Movies}">
+                <td th:text="${movie.title}"/>
+                <td th:text="${movie.genre}"/>
+                <td th:text="${movie.duration}"/>
+                <td th:text="${movie.movieId}"/>
+                <td>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
 </body>
 </html>

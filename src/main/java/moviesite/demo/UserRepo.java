@@ -12,7 +12,8 @@ public class UserRepo {
     Movie movie4 = new Movie ("hokus", 79, "Horror", 24091991);
 
 
-public void addmovies(){
+public void addMovies(){
+    //  constructor default
 
     movies.add(movie1);
     movies.add(movie2);
@@ -20,7 +21,7 @@ public void addmovies(){
     movies.add(movie4);
 }
 
-public ArrayList<Movie> getall(){
+public ArrayList<Movie> getAll(){
 
     return movies;
 
