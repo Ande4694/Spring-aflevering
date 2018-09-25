@@ -42,9 +42,11 @@ public void addMovie(Movie movie){
     this.movies.add(movie);
 }
 
+    public ArrayList<Movie> getMovies() {
+        return movies;
+    }
 
-
-public void addMovies(){
+    public void addMovies(){
     //  constructor default
 
     movies.add(movie1);

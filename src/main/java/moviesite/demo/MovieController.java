@@ -43,7 +43,7 @@ public class MovieController {
 
 
         model.addAttribute("Movies", listOfMovies.getAll());
-        /// "Movies" er NØGLEN SOM VI KALDER!!!!!!!"!!!!!!"! i Movie html 93
+        /// "Movies" er NØGLEN SOM VI KALDER!!!!!!!"!!!!!!"! i Movie html 130
 
 
         return MOVIE;
@@ -74,7 +74,17 @@ public class MovieController {
             @RequestParam("duration") int duration,
             @RequestParam("movieId") int movieId) throws Exception {
 
+
+//        for (int i = 0; i<listOfMovies.movies.size();i++){
+//            if(listOfMovies.movies.get(i).getMovieId()==(movieId)){
+//                log.info("Someone tried to add a movie with a pre-existing movie ID");
+//            } else {
+//                listOfMovies.movies.add(new Movie(title, duration, genre, movieId));
+//            }
+//        }
+
         listOfMovies.movies.add(new Movie(title, duration, genre, movieId));
+
 
         return "redirect:/Movie";
 
