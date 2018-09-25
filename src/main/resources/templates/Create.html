@@ -72,6 +72,11 @@
         .registerbtn:hover {
             opacity: 1;
         }
+        .logo {
+            position: absolute;
+            right: 14px;
+            top: -2PX;
+        }
     </style>
 </head>
 <body>
@@ -82,9 +87,9 @@
     <a href="About_us">About us</a>
 </div>
 
-    <div class="container">
-        <h1>Create Movie</h1>
-        <form method="Post" th:action="@{/Create}">
+<div class="container">
+    <h1>Create Movie</h1>
+    <form method="Post" th:action="@{/Create}">
         <hr>
 
         <label for="title"><b>Title</b></label>
@@ -99,13 +104,11 @@
         <label for="id"><b>ID</b></label>
         <input type="text" th:name="movieId" placeholder="Enter ID" required>
 
-            <input class="registerbtn" type="submit" value="Create"/>
+        <input class="registerbtn" type="submit" value="Create"/>
 
         <hr>
-
-
-
-
-
+    </form>
+</div>
+<div class="logo"> <img src="https://i.imgur.com/VKkRjuB.png" alt="Trulli" width="150" height="50"> </div>
 </body>
 </html>
