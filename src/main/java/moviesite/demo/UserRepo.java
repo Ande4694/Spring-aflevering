@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class UserRepo{
 
     ArrayList<Movie> movies = new ArrayList<Movie>();
+    ArrayList<Movie> searchedMovies = new ArrayList<>();
 
     Movie movie1 = new Movie ("IT", 135, "Horror", 24091991);
     Movie movie2 = new Movie ("De Utrolige 2", 125, " Science fiction-film/Actionfilm", 26101997);
@@ -25,13 +26,13 @@ public class UserRepo{
     Movie movie15 = new Movie ("Mary Poppins Returns", 122, "Fantasyfilm/Musical", 16874235);
     Movie movie16 = new Movie ("Mile 22", 100, "Kriminalfilm/Thriller", 53974821);
 
-public Movie searchByTitle(String name){
+public ArrayList<Movie> searchByTitle(String name){
     for (int i = 0; i<movies.size();i++){
 
         if(movies.get(i).getTitle().contains(name)){
-            return movies.get(i);
+            searchedMovies.add(movies.get(i));
         }
-        // evt kald create funk
+        return searchedMovies;
     }
 
     return null;

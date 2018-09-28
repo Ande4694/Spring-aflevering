@@ -57,6 +57,20 @@ public class MovieController {
         return ABOUT_US;
     }
 
+    @GetMapping("/Search")
+    public String Search(Model model){
+        log.info("someone is searching");
+
+        return "Search";
+    }
+
+    @RequestMapping(value = "/Search")
+    public String searchToArray(
+            @RequestParam("search") String search) throws Exception{
+        listOfMovies.searchByTitle(search);
+        return "redirect:/Search";
+    }
+
     @GetMapping("/Create")
     public String Create(Model model) {
 
@@ -78,9 +92,9 @@ public class MovieController {
 //        for (int i = 0; i<listOfMovies.movies.size();i++){
 //            if(listOfMovies.movies.get(i).getMovieId()==(movieId)){
 //                log.info("Someone tried to add a movie with a pre-existing movie ID");
-//            } else {
-//                listOfMovies.movies.add(new Movie(title, duration, genre, movieId));
 //            }
+//                listOfMovies.movies.add(new Movie(title, duration, genre, movieId));
+//
 //        }
 
         listOfMovies.movies.add(new Movie(title, duration, genre, movieId));
